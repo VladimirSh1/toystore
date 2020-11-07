@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+    <title>"Магазин игрушек"</title>
+</head>
+<body>
+    <div>
+        <h3>Детские игрушки</h3>
+        <table class="toylist">
+            <tr>
+                <td><p>Наименование</p></td>
+                <td><p>Цена</p></td>
+                <td></td>
+            </tr>
+            @foreach (var toy in ViewBag.Toys)
+            {
+                <tr>
+                    <td><p>@toy.Name</p></td>
+                    <td><p>@toy.Price руб.</p></td>
+                    <td><p><a href="/Home/Buy/@toy.Id">Купить</a></p></td>
+                </tr>
+            }
+        </table>
+        <div class="price"><a href="/home/getprice">Скачать прайс-лист</a></div>
+    </div>
+</body>
+</html>
