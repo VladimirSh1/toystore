@@ -1,6 +1,30 @@
-﻿body {
+﻿.maincontainer {
     padding-top: 20px;
     padding-left: 85px;
+}
+
+nav {
+    padding: 1em;
+    background-color: #BBF89F;
+}
+
+li {
+    font-size: 20pt;
+    text-transform: uppercase;
+    list-style-type: none;
+    margin-left:-1em;
+}
+
+    li a {
+        text-decoration: none;
+        font-family: Trebuchet MS,Verdana, Arial, Helvetica, sans-serif;
+        letter-spacing: 0.08em;
+        font-stretch: semi-condensed;
+    }
+
+.content {
+    padding: 1em 5em;
+    min-height: calc(70vh);
 }
 
 h3{

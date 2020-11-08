@@ -1,17 +1,9 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Купить игрушку";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
-    <title>"Купить игрушку"</title>
-</head>
-<body>
-    <div>
+<div class="wrapper">
+    <div class="content">
         <h3>Форма оформления покупки</h3>
         <form method="post" action="">
             <input type="hidden" value="@ViewBag.ToyId" name="ToyId" />
@@ -30,6 +22,5 @@
             </table>
         </form>
     </div>
-</body>
-</html>
+</div>
 
