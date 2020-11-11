@@ -1,17 +1,17 @@
-﻿@{
-    ViewBag.Title = "Магазин игрушек";
-}
+﻿@using Toystore.Models; 
+@model IEnumerable<Toy>
 
 <div class="wrapper">
     <div class="content">
         <h3>Детские игрушки</h3>
+
         <table class="toylist">
             <tr>
                 <td><p>Наименование</p></td>
                 <td><p>Цена</p></td>
                 <td></td>
             </tr>
-            @foreach (var toy in ViewBag.Toys)
+            @foreach (Toy toy in Model)
             {
                 <tr>
                     <td><p>@toy.Name</p></td>
@@ -21,5 +21,8 @@
             }
         </table>
         <div class="price"><a href="/home/getprice">Скачать прайс-лист</a></div>
+
+        @Html.Action("GetAuthors")
+
     </div>
 </div>

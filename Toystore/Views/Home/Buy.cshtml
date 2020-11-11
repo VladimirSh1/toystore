@@ -1,26 +1,68 @@
-﻿@{
-    ViewBag.Title = "Купить игрушку";
-}
-
+﻿
 <div class="wrapper">
-    <div class="content">
-        <h3>Форма оформления покупки</h3>
-        <form method="post" action="">
-            <input type="hidden" value="@ViewBag.ToyId" name="ToyId" />
-            <table>
-                <tr>
-                    <td><p>Введите свое имя: </p></td>
-                    <td><input type="text" name="CustomerName" /> </td>
-                </tr>
-                <tr>
-                    <td><p>Введите адрес: </p></td>
-                    <td>
-                        <input type="text" name="Address" />
-                    </td>
-                </tr>
-                <tr><td class="buttn" colspan="2"><input type="submit" value="Отправить" /> </td><td></td></tr>
-            </table>
-        </form>
+    <div class="content buy-content">
+        <div class="col-1">
+            <h3>Форма оформления покупки</h3>
+            @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+            {
+                @Html.Hidden("ToyId", ViewBag.ToyId as string)
+                <table class="buy">
+                    <tr>
+                        <td><p>@Html.Label("CustomerName", "Введите свое имя:")</p></td>
+                        <td>@Html.TextBox("CustomerName", "Ваше имя")</td>
+                    </tr>
+                    <tr>
+                        <td><p>@Html.Label("Address", "Введите адрес:")</p></td>
+                        <td>@Html.TextBox("Address", "Ваш адрес")</td>
+                    </tr>
+                    <tr>
+                        <td class="buttn" colspan="2">
+                            <input type="submit" value="Отправить" />
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <div class="test-helper">
+                    @Html.TextArea("text", "Напишите свой комментарий", 5, 50, null)
+                </div>
+
+                @Html.Label("userpass", "введите пароль:")
+                @Html.Password("userpass", "passval")
+
+
+
+
+            }
+
+        </div>
+        <div class="col-2">
+            <div class="test-helper">
+                @Html.RadioButton("color", "red", true)
+                <span>красный</span> <br />
+                @Html.RadioButton("color", "blue")
+                <span>синий</span> <br />
+                @Html.RadioButton("color", "green")
+                <span>зеленый</span>
+            </div>
+
+            @Html.CheckBox("checkbox1", false)
+            @Html.Label("checkbox1", "срочная доставка")
+
+
+            <div class="test-helper">
+                @Html.ListBox("countires", new MultiSelectList(new string[] { "Россия", "США", "Китай", "Индия" }),
+               new { @class = "listbox-helper" })
+            </div>
+
+
+            <div class="test-helper">
+                @Html.DropDownList("countires", new SelectList(new string[] {"Russia","USA",
+               "Canada","France"}), "Страны", new { @class = "ddlist-helper" })
+            </div>
+
+        </div>
+
     </div>
 </div>
 

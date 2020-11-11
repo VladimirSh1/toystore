@@ -173,6 +173,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Buy.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Shared\_LayoutAbout.cshtml" />
+    <Content Include="Views\Home\GetAuthors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,9 +16,7 @@ namespace Toystore.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<Toy> toys = db.Toys;
-            ViewBag.Toys = toys;
-            return View();
+            return View(db.Toys);
         }
 
 
@@ -49,6 +47,17 @@ namespace Toystore.Controllers
             string fpath = Server.MapPath($"~/Files/{fname}");
             string ftype = "application/xlsx";
             return File(fpath, ftype, fname);
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult GetAuthors()
+        {
+            string[] authors = new string[] { "Пушкин А.С.", "Лермонтов М.Ю.", "Снегов С.А." };
+            return PartialView(authors);
         }
 
     }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
+    <title>Магазин игрушек 1.0</title>
     <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")"/>
 </head>
 
@@ -11,12 +11,13 @@
     <nav>
         <ul class="menu">
             <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+            <li>@Html.ActionLink("О магазине", "About", "Home")</li>
         </ul>
     </nav>
     @RenderBody()
     <hr />
     <footer>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <p>&copy; @DateTime.Now.Year - Шиманский В.А.</p>
     </footer>
 </body>
 </html>

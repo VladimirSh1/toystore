@@ -1,4 +1,10 @@
-﻿.maincontainer {
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: Trebuchet MS,Verdana, Arial, Helvetica, sans-serif;
+}
+
+.maincontainer {
     padding-top: 20px;
     padding-left: 85px;
 }
@@ -8,36 +14,45 @@ nav {
     background-color: #BBF89F;
 }
 
-li {
-    font-size: 20pt;
-    text-transform: uppercase;
-    list-style-type: none;
-    margin-left:-1em;
+nav ul {
+    display: flex;
+    margin: auto;
 }
 
-    li a {
-        text-decoration: none;
-        font-family: Trebuchet MS,Verdana, Arial, Helvetica, sans-serif;
-        letter-spacing: 0.08em;
-        font-stretch: semi-condensed;
+nav li {
+    list-style-type: none;
+}
+
+
+    nav li:nth-child(n+2) {
+        margin-left:5em;
     }
+
+
+nav li a {
+    text-transform: uppercase;
+    font-size: 14pt;
+    text-decoration: none;
+    letter-spacing: -0.08em;
+}
 
 .content {
     padding: 1em 5em;
     min-height: calc(70vh);
 }
 
-h3{
-    font-size: 20pt;
+h3 {
+    font-size: 18pt;
+    margin: 0.5em 0em;
 }
 
 table.toylist {
     margin-left: 10px;
 }
 
-td > p {
-    margin-block-start: 0.2em;
-    margin-block-end: 0.2em;
+table.toylist {
+    margin-left: 10px;
+    line-height: 190%;
 }
 
 table.toylist tr:first-child {
@@ -45,29 +60,64 @@ table.toylist tr:first-child {
 }
 
 table.toylist td:first-child {
-    width: 300px;
+    width: 250px;
 }
 
 table.toylist td:nth-child(2) {
     width: 100px;
 }
 
+td{
+    margin: 5pt 0pt;
+}
+
 td > p {
-    font-size: 16pt;
+    font-size: 12pt;
+}
+
+.price {
+    font-size: 14pt;
+    margin-top: 2em;
 }
 
 input[type="submit"] {
     font-size: 16pt;
     font-weight: 600;
-    padding: 1em;
-    margin-top: 1em;
+    padding: 0.2em 1em;
+    margin: 1em;
+}
+
+table.buy {
+    margin-left: 10px;
+    line-height: 200%;
+}
+
+table.buy td:first-child {
+    padding-right: 10pt;
 }
 
 .buttn {
     text-align: center;
 }
 
-.price{
-    font-size: 16pt;
-    margin-top: 2em;
+
+.buy-content{
+    display:flex;
+/*    justify-content: space-between;*/
+}
+.buy-content .col-2{
+    margin-left:5em;
+}
+
+.test-helper{
+    margin: 1.5em 0em;
+}
+
+.listbox-helper, .ddlist-helper {
+    font-size: 14pt;
+    width: 120pt;
+}
+
+input[type=password]{
+    margin-left:1em;
 }
